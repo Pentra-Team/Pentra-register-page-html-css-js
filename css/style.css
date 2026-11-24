@@ -1,0 +1,289 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Tajawal', sans-serif;
+  background: #F6F8FC;
+  min-height: 100vh;
+}
+
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+a { text-decoration: none; }
+
+/* ---------- Layout ---------- */
+.page {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 88px 80px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 86px;
+}
+
+/* ---------- Card (right side) ---------- */
+.login-card {
+  width: 543px;
+  min-height: 850px;
+  flex-shrink: 0;
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0px 0px 38px 0px #004B9221;
+  padding: 56px 71px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo { width: 108px; height: 115px; object-fit: contain; }
+
+/* العنوان */
+.title {
+  margin-top: 24px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 100%;
+  color: #151D32;
+  text-align: center;
+}
+
+.subtitle {
+  margin-top: 12px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 100%;
+  color: #737784;
+  text-align: center;
+}
+
+/* ---------- Form ---------- */
+.login-form {
+  width: 400px;
+  margin-top: 32px;
+}
+
+.field-label {
+  display: block;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  color: #151D32;
+  margin-bottom: 10px;
+}
+
+.input-wrap {
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.input {
+  width: 100%;
+  height: 48px;
+  border-radius: 12px;
+  border: 1px solid #73778499;
+  padding: 8px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #151D32;
+  background: #fff;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+  text-align: right;
+}
+.input::placeholder { color: #A1A5AD; }
+.input:focus {
+  border-color: #5865F2;
+  box-shadow: 0 0 0 3px #5865F220;
+}
+.input-start { padding-inline-start: 46px; }
+.input-end   { padding-inline-end: 46px; }
+
+.icon-end {
+  position: absolute;
+  inset-inline-end: 12px;
+  top: 12px;
+  pointer-events: none;
+}
+
+.eye {
+  position: absolute;
+  inset-inline-end: 12px;
+  top: 12px;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+.eye.active svg { fill: #5865F2; }
+
+/* ---------- قائمة الجنس ---------- */
+.select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  color: #151D32;
+}
+/* لون الـ placeholder لما ما يكون مختار إشي */
+.select:has(option[value=""]:checked) { color: #A1A5AD; }
+.select option { color: #151D32; }
+
+/* ---------- تاريخ الميلاد ---------- */
+.date {
+  position: relative;
+  color: #151D32;
+  cursor: pointer;
+}
+/* بنخفي أيقونة المتصفح، وبنخلي الضغط على أي مكان بالحقل يفتح التقويم */
+.date::-webkit-calendar-picker-indicator {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.date.empty { color: #A1A5AD; }
+
+/* ---------- Links ---------- */
+.link {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 100%;
+  color: #5865F2;
+}
+.link:hover { text-decoration: underline; }
+
+/* ---------- Button ---------- */
+.btn-login {
+  width: 100%;
+  height: 48px;
+  margin-top: 10px;
+  border-radius: 12px;
+  background: #5865F2;
+  box-shadow: 0px 4px 18px 0px #0073DE1F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px;
+  color: #fff;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 100%;
+  transition: background .2s, transform .1s;
+}
+.btn-login:hover { background: #4752d6; }
+.btn-login:active { transform: scale(.99); }
+
+.signup {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 100%;
+  color: #BABABA;
+}
+
+/* ---------- Hero (left side) ---------- */
+.hero {
+  width: 651px;
+  flex-shrink: 0;
+  padding-top: 40px;
+  text-align: right;
+}
+
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  font-weight: 700;
+  line-height: 100%;
+  color: #151D32;
+}
+.t48 { font-size: 48px; }
+.t64 { font-size: 64px; }
+.grad {
+  background: linear-gradient(90deg, #0F1EE9 0%, #5B66F3 18.75%, #5ACBFC 69.71%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.hero-text {
+  margin-top: 24px;
+  max-width: 557px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  color: #9D9FA6;
+}
+
+/* ---------- Carousel ---------- */
+.stage {
+  position: relative;
+  width: 651px;
+  height: 496px;
+  margin-top: 30px;
+}
+
+.slide {
+  position: absolute;
+  left: 50%;
+  opacity: 0;
+  transform: translateX(-50%) translateY(10px);
+  transition: opacity .7s ease, transform .7s ease;
+  pointer-events: none;
+}
+.slide.active {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.s1 { width: 637px; height: 441px; top: 36px; }
+.s2 { width: 651px; height: 423px; top: 25px; }
+.s3 { width: 651px; height: 496px; top: 0; }
+
+.dots {
+  margin-top: 46px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  justify-content: flex-end;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border-radius: 50%;
+  background: #D0D2D6;
+  transition: width .4s ease, background .4s ease, border-radius .4s ease;
+}
+.dot.active {
+  width: 29px;
+  border-radius: 14px;
+  background: #7984F5;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1200px) {
+  .hero { display: none; }
+  .page { padding: 40px 16px; }
+}
+@media (max-width: 560px) {
+  .login-card { width: 100%; padding: 40px 20px; min-height: auto; }
+  .login-form { width: 100%; }
+}
